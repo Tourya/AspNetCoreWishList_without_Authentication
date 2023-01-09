@@ -1,0 +1,14 @@
+﻿@using WishList.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<WishList.Models.Item>
+
+<h1>Wishlist</h1>
+
+<a asp-action="create">Add Item</a>
+
+<ul>
+    @foreach (Item item in Model)
+    {
+        <li>@item.Description <a asp-action="delete" asp-route-id="@item.Id">delete</a></li>
+    }
+</ul>
